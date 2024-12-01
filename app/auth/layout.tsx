@@ -12,7 +12,7 @@ export default function AuthLayout({
       {/* Left side with image - hidden on mobile */}
       <div className="hidden md:flex md:w-1/2 bg-primary relative">
         <Image
-          src="https://picsum.photos/1000/1000"
+          src="https://static.wixstatic.com/media/c67dd6_c7501b9f2c184f61a2f6e076ac08cbe8~mv2.webp"
           alt="Background"
           fill
           className="object-cover"
