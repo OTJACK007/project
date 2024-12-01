@@ -12,6 +12,34 @@ interface FormData {
   mobileProvider: 'orange' | 'wave' | 'free' | 'naboo' | 'paydunya' | '';
 }
 
+const mobileProviders = [
+  { 
+    id: 'orange', 
+    name: 'Orange Money', 
+    logo: 'https://static.wixstatic.com/media/c67dd6_5f82e65e6a574c16a121587771bcb130~mv2.png'
+  },
+  { 
+    id: 'wave', 
+    name: 'Wave Mobile Money', 
+    logo: 'https://static.wixstatic.com/media/c67dd6_c6945c03285e4a728ca8efbf35094f0d~mv2.png'
+  },
+  { 
+    id: 'free', 
+    name: 'Free Money', 
+    logo: 'https://static.wixstatic.com/media/c67dd6_370e990d7e8c40e1a77f2a3c247ee54b~mv2.png'
+  },
+  { 
+    id: 'naboo', 
+    name: 'NabooPay', 
+    logo: 'https://static.wixstatic.com/media/c67dd6_c63aff211d374be7858b4d323900bd12~mv2.png'
+  },
+  { 
+    id: 'paydunya', 
+    name: 'Paydunya', 
+    logo: 'https://static.wixstatic.com/media/c67dd6_ee4920760d364113b925f509e6f1e073~mv2.png'
+  }
+];
+
 export function PaymentForm() {
   const [formData, setFormData] = useState<FormData>({
     address: '',
@@ -113,7 +141,7 @@ export function PaymentForm() {
                 name="postalCode"
                 value={formData.postalCode}
                 onChange={handleChange}
-                placeholder="75000"
+                placeholder="17000"
                 className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               />
             </div>
@@ -127,7 +155,7 @@ export function PaymentForm() {
                 name="city"
                 value={formData.city}
                 onChange={handleChange}
-                placeholder="Paris"
+                placeholder="Dakar"
                 className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               />
             </div>
@@ -192,13 +220,7 @@ export function PaymentForm() {
 
               {formData.paymentMethod === 'mobile' && (
                 <div className="mt-4 pt-4 border-t grid grid-cols-5 gap-4">
-                  {[
-                    { id: 'orange', name: 'Orange Money', logo: '/images/payment/orange-money.png' },
-                    { id: 'wave', name: 'Wave', logo: '/images/payment/wave.png' },
-                    { id: 'free', name: 'Free Money', logo: '/images/payment/free-money.png' },
-                    { id: 'naboo', name: 'NabooPay', logo: '/images/payment/naboo.png' },
-                    { id: 'paydunya', name: 'Paydunya', logo: '/images/payment/paydunya.png' }
-                  ].map((provider) => (
+                  {mobileProviders.map((provider) => (
                     <div
                       key={provider.id}
                       className={cn(
@@ -305,7 +327,7 @@ export function PaymentForm() {
           </div>
 
           <p className="text-sm text-muted-foreground mt-4">
-            Le paiement et le stockage sont entièrement gérés par Stripe, l&apos;entreprise ne détient aucune information bancaire.
+            Le paiement et le stockage sont entièrement gérés par nos fournisseurs, l&apos;entreprise ne conserve aucune information bancaire.
           </p>
         </div>
       </div>
