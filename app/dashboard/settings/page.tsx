@@ -1,17 +1,27 @@
 'use client';
 
+import { useState } from 'react';
+import { SettingsNavigation } from '@/components/settings/SettingsNavigation';
+import { LegalInformationForm } from '@/components/settings/LegalInformationForm';
+
 export default function Settings() {
+  const [activeTab, setActiveTab] = useState('legal');
+
   return (
-    <div className="flex flex-col h-full p-6">
-      <h1 className="text-2xl font-semibold text-foreground mb-6">Paramètres</h1>
-      <div className="grid gap-6">
-        <div className="p-6 bg-card rounded-lg border border-border">
-          <h2 className="text-lg font-medium text-card-foreground mb-4">Préférences</h2>
-          <p className="text-sm text-muted-foreground">
-            Configurez vos préférences de compte et d'application.
-          </p>
+    <div className="flex flex-col h-full">
+      <div className="border-b border-border bg-background sticky top-0 z-10">
+        <div className="px-8">
+          <SettingsNavigation 
+            activeTab={activeTab}
+            onTabChange={setActiveTab}
+          />
         </div>
       </div>
+
+      <main className="flex-1 overflow-y-auto p-8">
+        {activeTab === 'legal' && <LegalInformationForm />}
+        {/* Add other tab content components here */}
+      </main>
     </div>
   );
 }
