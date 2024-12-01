@@ -9,7 +9,7 @@ export function WelcomeMessage() {
         Bonjour %Ismaila !
       </h1>
       <p className="text-gray-600 mb-6">
-        Toutes vos missions avec Side s'afficheront ici. Pour démarrer, il suffit de cliquer sur le bouton "+ Nouvelle demande" en bas de la barre de navigation de gauche.
+        Toutes vos missions avec Side s&apos;afficheront ici. Pour démarrer, il suffit de cliquer sur le bouton &quot;+ Nouvelle demande&quot; en bas de la barre de navigation de gauche.
       </p>
       <div className="flex justify-center">
         <button className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 shadow-sm">

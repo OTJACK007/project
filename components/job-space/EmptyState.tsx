@@ -7,7 +7,7 @@ export function EmptyState() {
         Bonjour %Ismaila !
       </h1>
       <p className="text-gray-600 text-center max-w-md mb-8">
-        Toutes vos missions avec Side s'afficheront ici. Pour démarrer, il suffit de cliquer sur le bouton "+ Nouvelle demande" en bas de la barre de navigation de gauche.
+        Toutes vos missions avec Side s&apos;afficheront ici. Pour démarrer, il suffit de cliquer sur le bouton &quot;+ Nouvelle demande&quot; en bas de la barre de navigation de gauche.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-3xl">
         {[1, 2, 3].map((i) => (

@@ -12,7 +12,7 @@ export function EmptyState() {
         Aucun créneau cette semaine
       </h3>
       <p className="text-sm text-muted-foreground text-center max-w-sm mb-6">
-        Vous n'avez pas de créneau prévu cette semaine.
+        Vous n&apos;avez pas de créneau prévu cette semaine.
         Affichez une autre semaine ou postez une nouvelle mission.
       </p>
       <button className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-primary-foreground bg-primary hover:bg-primary/90 shadow-sm">
