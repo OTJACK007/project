@@ -51,18 +51,20 @@ export function SettingsNavigation({ activeTab, onTabChange }: SettingsNavigatio
           <button
             key={tab.id}
             onClick={() => onTabChange(tab.id)}
-            className={cn(
-              "relative py-1 text-sm font-medium transition-colors flex items-center gap-2",
+            className="relative group"
+          >
+            <div className={cn(
+              "flex items-center gap-2 py-1 text-sm font-medium transition-colors",
               activeTab === tab.id
                 ? "text-primary"
                 : "text-muted-foreground hover:text-foreground"
-            )}
-          >
-            <Icon className="h-4 w-4" />
-            {tab.label}
-            {activeTab === tab.id && (
-              <div className="absolute -bottom-[26px] left-0 right-0 h-0.5 bg-primary" />
-            )}
+            )}>
+              <Icon className="h-4 w-4" />
+              {tab.label}
+              {activeTab === tab.id && (
+                <div className="absolute left-0 right-0 bottom-[-2px] h-0.5 bg-primary" />
+              )}
+            </div>
           </button>
         )}
       )}

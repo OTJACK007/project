@@ -10,19 +10,21 @@ import { UserMenu } from '@/components/layout/user/UserMenu';
 import {
   ChevronLeft,
   ChevronRight,
-  PlusCircle,
   Blocks,
+  BarChart3,
   CalendarDays,
   Users2,
   Zap,
   FileSpreadsheet,
   Clock,
   Settings,
-  Receipt
+  Receipt,
+  PlusCircle
 } from 'lucide-react';
 
 const navigation = [
   { name: 'JOB Space', href: '/dashboard/job-space', icon: Blocks },
+  { name: 'Analytiques', href: '/dashboard/analytiques', icon: BarChart3 },
   { name: 'Planning', href: '/dashboard/planning', icon: CalendarDays },
   { name: 'Prestations', href: '/dashboard/prestations', icon: Users2 },
   { name: 'Fiches de poste', href: '/dashboard/fiches', icon: Zap },
