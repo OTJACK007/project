@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  output: 'export',  // Enable static exports
   images: {
     unoptimized: true,
     remotePatterns: [
@@ -10,12 +10,6 @@ const nextConfig = {
       }
     ],
   },
-  typescript: {
-    ignoreBuildErrors: true
-  },
-  eslint: {
-    ignoreDuringBuilds: true
-  }
 };
 
 module.exports = nextConfig;
