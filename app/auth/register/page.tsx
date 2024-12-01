@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { LoadingSpinner } from '@/components/auth/LoadingSpinner';
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -12,8 +14,10 @@ export default function RegisterPage() {
     e.preventDefault();
     setIsLoading(true);
     
-    // Simply redirect to dashboard
-    router.push('/dashboard/job-space');
+    // Simulate loading for demo
+    setTimeout(() => {
+      router.push('/dashboard/job-space');
+    }, 1500);
   };
 
   return (
@@ -46,13 +50,15 @@ export default function RegisterPage() {
             className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           />
         </div>
-        <button
+        <motion.button
           type="submit"
           disabled={isLoading}
-          className="inline-flex w-full items-center justify-center rounded-md bg-primary px-8 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-primary px-8 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+          whileTap={{ scale: 0.98 }}
         >
+          {isLoading && <LoadingSpinner />}
           {isLoading ? 'Création...' : 'S\'inscrire'}
-        </button>
+        </motion.button>
       </form>
       <div className="relative">
         <div className="absolute inset-0 flex items-center">
@@ -64,9 +70,11 @@ export default function RegisterPage() {
           </span>
         </div>
       </div>
-      <button
+      <motion.button
         type="button"
         className="inline-flex w-full items-center justify-center rounded-md border border-input bg-background px-8 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+        whileHover={{ scale: 1.01 }}
+        whileTap={{ scale: 0.98 }}
       >
         <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24">
           <path
@@ -87,7 +95,7 @@ export default function RegisterPage() {
           />
         </svg>
         Google
-      </button>
+      </motion.button>
       <p className="text-center text-sm text-muted-foreground">
         Déjà un compte?{' '}
         <Link href="/auth/login" className="text-primary hover:underline">
